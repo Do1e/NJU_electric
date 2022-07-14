@@ -46,12 +46,15 @@ T = []
 R = []
 with open(outputFile, "r") as f:
 	for line in f:
-		line = line.strip()
-		t, r = line.split(" ")
-		t = dateutil.parser.parse(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(float(t))))
-		r = float(r)
-		T.append(t)
-		R.append(r)
+		try:
+			line = line.strip()
+			t, r = line.split(" ")
+			t = dateutil.parser.parse(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(float(t))))
+			r = float(r)
+			T.append(t)
+			R.append(r)
+		except:
+			pass
 # print(T)
 # print(R)
 fig = plt.gca()
