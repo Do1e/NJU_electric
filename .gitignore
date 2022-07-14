@@ -1,3 +1,4 @@
 myconfig.json
 *.out
 *.png
+__pycache__/*
