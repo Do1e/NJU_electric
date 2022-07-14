@@ -48,7 +48,7 @@ with open(outputFile, "r") as f:
 	for line in f:
 		line = line.strip()
 		t, r = line.split(" ")
-		t = dateutil.parser.parse(time.strftime("%m-%d %H", time.localtime(float(t))))
+		t = dateutil.parser.parse(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(float(t))))
 		r = float(r)
 		T.append(t)
 		R.append(r)
