@@ -28,7 +28,7 @@ login.login(session, username=info['student_id'], password=info['password'])
 msg = session.get(urls['electric'])
 # print(msg.text)
 soup = BeautifulSoup(msg.text, 'html.parser')
-txt = soup.find_all('script')[-1].text
+txt = str(soup.find_all('script')[-1])
 index = txt.find('dfyl')
 txt = txt[index:index+20]
 index1 = txt.find(':')
